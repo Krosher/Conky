@@ -1,0 +1,120 @@
+########################################################################
+#                                                                      #
+#                         Conkyrc by Kros                              #
+#                                                                      #
+########################################################################
+background yes
+double_buffer yes
+no_buffers yes
+text_buffer_size 2048
+imlib_cache_size 0
+update_interval 1
+cpu_avg_samples 1
+format_human_readable
+
+alignment top_right
+gap_x 0
+gap_y 0
+minimum_size 280 1080
+maximum_width 280
+
+own_window yes
+own_window_type normal	# options are: normal/override/dock/desktop/panel
+own_window_class Conky
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_transparent yes
+own_window_colour 000000
+own_window_argb_visual yes
+own_window_argb_value 0
+
+border_inner_margin 0
+border_outer_margin 0
+
+default_bar_size 100 6
+draw_shades no
+default_shade_color 000000
+draw_outline no
+default_outline_color 000000
+draw_borders no
+draw_graph_borders yes
+default_graph_size 40,220
+show_graph_scale no
+show_graph_range no
+
+override_utf8_locale yes
+use_xft yes
+xftfont Adele:size=13,weight:normal
+xftalpha 1
+uppercase no
+max_text_width 40
+
+default_color FFFFFF
+color1 EAEAEA
+color2 FFA300
+color3 00ff00
+color4 FF0000
+
+TEXT
+#
+# info
+
+# $sysname
+$nodename 
+$sysname $alignr $kernel
+$XDG_CURRENT_DESKTOP
+${color3}Uptime:${color} ${alignr 5}$uptime
+
+#
+# cpu load/temp/graph
+${voffset 5}${color3}CPU:${color} ${cpu cpu0}%${alignr 10}${exec sensors|grep 'Core 0'|awk '{print $3}'}
+${voffset -5}${color2}${cpugraph cpu0 40,270}
+${color3}Core 1 ${color}${cpu cpu0}% ${color2}${goto 120} ${cpubar cpu0}
+${color3}Core 2 ${color}${cpu cpu1}% ${color2}${goto 120} ${cpubar cpu1}
+${color3}Core 3 ${color}${cpu cpu2}% ${color2}${goto 120} ${cpubar cpu2}
+${color3}Core 4 ${color}${cpu cpu3}% ${color2}${goto 120} ${cpubar cpu3}
+${color3}Core 5 ${color}${cpu cpu0}% ${color2}${goto 120} ${cpubar cpu4}
+${color3}Core 6 ${color}${cpu cpu1}% ${color2}${goto 120} ${cpubar cpu5}
+${color3}Core 7 ${color}${cpu cpu2}% ${color2}${goto 120} ${cpubar cpu6}
+${color3}Core 8 ${color}${cpu cpu3}% ${color2}${goto 120} ${cpubar cpu7}
+
+#
+# top processes
+${voffset -5}${font GE Inspira:size=15,weight:normal}${color3}${alignc}Processos: ${font}${color} 
+${voffset 4}${top name 1}${alignr 10}${top cpu 1}%
+${voffset -2}${top name 2}${alignr 10}${top cpu 2}%
+${voffset -2}${top name 3}${alignr 10}${top cpu 3}%
+${voffset -2}${top name 4}${alignr 10}${top cpu 4}%
+#
+
+# top memory
+${voffset -5}${font GE Inspira:size=15,weight:normal}${color3}Memòria: ${color} ${goto 120}${mem}/${memmax}${alignr}${font}
+${voffset 10}${font Adele:size=15,weight:normal}Memory${goto 100}${color2}$membar${alignr 10}${color1}$memperc%
+${color1}${voffset -2}${font}${top_mem name 1}${alignr 10}${top mem 1}%
+${voffset -2}${top_mem name 2}${alignr 10}${top mem 2}%
+${voffset -2}${top_mem name 3}${alignr 10}${top mem 3}%
+${voffset -2}${top_mem name 4}${alignr 10}${top mem 4}%
+#
+#disk info
+
+${voffset -5}${font GE Inspira:size=15,weight:normal}${color3}${alignc}Ús de disc: ${font}${color} 
+
+${voffset -5}${font GE Inspira:size=15,weight:normal}${color3}/ ${font}${color}${alignc} ${fs_used /}/${fs_size /} 
+${alignc}${color2}${fs_bar 6 /}${color}
+${color3}/boot ${color}${alignc} ${fs_used /boot}/${fs_size /boot}
+${alignc}${color2}${fs_bar 6 /boot}${color}
+${color3}/home ${color}${alignc} ${fs_used /home}/${fs_size /home}
+${alignc}${color2}${fs_bar 6 /home}${color}
+
+#network
+${voffset -5}${font GE Inspira:size=15,weight:normal}${color3}${alignc}Xarxa: ${font}${color} 
+
+${color3}IP:${color} ${alignr 10}${addr enp4s0}
+${voffset 5}${color3}Pujada:${color}${alignr 10}${upspeed enp4s0}
+${voffset 0}${color3}Total Pujada:${color}${alignr 10}${totalup enp4s0}
+${color2}${upspeedgraph enp4s0 40,270 FFCC00 ${color2} 100 -l}
+${color1}${color3}Baixada:${color}$color1${alignr 10}${downspeed enp4s0}
+${color3}Total Baixada:${color}${alignr 10}${totaldown enp4s0}
+${color2}${downspeedgraph enp4s0 40,270 FFCC00 ${color2} 100 -l}
+
+
+
