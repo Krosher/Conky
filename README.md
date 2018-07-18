@@ -6,6 +6,6 @@ Simple unpack at directory .conky if you use conky-manager or rename with .conky
 
 REQUERIMENTS
 
-A distribution of GNU/Linux
-Conky
-Conky-manager (optional)
+A distribution of GNU/Linux.
+Conky.
+Conky-manager. (optional)
