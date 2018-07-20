@@ -72,10 +72,10 @@ ${color3}Core 1 ${color}${cpu cpu0}% ${color2}${goto 120} ${cpubar cpu0}
 ${color3}Core 2 ${color}${cpu cpu1}% ${color2}${goto 120} ${cpubar cpu1}
 ${color3}Core 3 ${color}${cpu cpu2}% ${color2}${goto 120} ${cpubar cpu2}
 ${color3}Core 4 ${color}${cpu cpu3}% ${color2}${goto 120} ${cpubar cpu3}
-${color3}Core 5 ${color}${cpu cpu0}% ${color2}${goto 120} ${cpubar cpu4}
-${color3}Core 6 ${color}${cpu cpu1}% ${color2}${goto 120} ${cpubar cpu5}
-${color3}Core 7 ${color}${cpu cpu2}% ${color2}${goto 120} ${cpubar cpu6}
-${color3}Core 8 ${color}${cpu cpu3}% ${color2}${goto 120} ${cpubar cpu7}
+${color3}Core 5 ${color}${cpu cpu4}% ${color2}${goto 120} ${cpubar cpu4}
+${color3}Core 6 ${color}${cpu cpu5}% ${color2}${goto 120} ${cpubar cpu5}
+${color3}Core 7 ${color}${cpu cpu6}% ${color2}${goto 120} ${cpubar cpu6}
+${color3}Core 8 ${color}${cpu cpu7}% ${color2}${goto 120} ${cpubar cpu7}
 
 #
 # top processes
