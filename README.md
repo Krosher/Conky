@@ -9,3 +9,7 @@ REQUERIMENTS
 A distribution of GNU/Linux.
 Conky.
 Conky-manager. (optional)
+
+Tutorial (In spanish language)
+
+https://krosher.github.io/Documentos/Instalaci%C3%B3n-de-Conky-y-Conky-Manager-en-Debian.pdf
