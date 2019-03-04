@@ -1,4 +1,4 @@
-# Conky
+# A simple config file for Conky
 
 INSTALLATION:
 
